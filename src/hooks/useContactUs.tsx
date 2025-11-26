@@ -15,7 +15,7 @@ interface DiscordIntegrationResponse {
   // For example, if the response contains a 'status' property, you can add it here.
 }
 
-function useDiscordIntegration(): [
+function useContactUs(): [
   (data: ClientData) => Promise<void>,
   DiscordIntegrationResponse | undefined
 ] {
@@ -39,7 +39,7 @@ function useDiscordIntegration(): [
     try {
       const response: AxiosResponse<DiscordIntegrationResponse> =
         await axios.post(
-          process.env.NEXT_PUBLIC_DISCROD_INTERGRATION_HOOK || "",
+          process.env.NEXT_PUBLIC_DISCROD_CONTACT_US_HOOK || "",
           body
         );
       setClientData(response);
@@ -53,4 +53,4 @@ function useDiscordIntegration(): [
   return [Send, clientData];
 }
 
-export default useDiscordIntegration;
+export default useContactUs;

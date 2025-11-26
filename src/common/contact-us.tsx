@@ -4,9 +4,7 @@ import SectionTittle from "@/common/section-tittle";
 import React, { FormEvent, useState } from "react";
 import { Marquee } from "@/components/ui/marquee";
 
-import useDiscrodIntergration, {
-  ClientData,
-} from "@/hooks/useDiscordIntergration";
+import useContactUs, { ClientData } from "@/hooks/useContactUs";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
 interface GetStartedDataType {
@@ -14,7 +12,7 @@ interface GetStartedDataType {
   title: string;
 }
 function ContactUs({ pad, hideMarquie }: any) {
-  const [Send, cilentData] = useDiscrodIntergration();
+  const [Send, cilentData] = useContactUs();
 
   const getstarted: GetStartedDataType[] = [
     { id: 1, title: "Get Started" },

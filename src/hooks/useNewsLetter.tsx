@@ -24,7 +24,7 @@ function useNewsLetter(): [
       color: "white",
       embeds: [
         {
-          title: "Message for Weekly News-letter",
+          title: "Message for Weekly News-letter from NextCodez",
           description: `Email: ${data.email}`,
         },
       ],
@@ -33,7 +33,7 @@ function useNewsLetter(): [
     try {
       const response: AxiosResponse<DiscordIntegrationResponse> =
         await axios.post(
-          process.env.NEXT_PUBLIC_DISCROD_INTERGRATION_HOOK_TWO || "",
+          process.env.NEXT_PUBLIC_DISCROD_NEWSLETTER_HOOK || "",
           body
         );
       setClientData(response);
