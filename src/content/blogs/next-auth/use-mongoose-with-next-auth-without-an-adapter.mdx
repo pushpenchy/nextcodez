@@ -1,0 +1,111 @@
+---
+title: "Use Mongoose with Next-Auth Without an Adapter!"
+date: "2024-02-03"
+description: "A clean and minimal CRUD setup using MongoDB + Next.js."
+---
+
+export const metadata = {
+  metadataBase: new URL("https://ui-layouts.com"),
+  title: "Use Mongoose with Next-Auth Without an Adapter!",
+  description: "A clean and minimal CRUD setup using MongoDB + Next.js.",
+  keywords: [
+    "Accordion component",
+    "React accordion",
+    "Multi-expand accordion",
+    "Tailwind CSS accordion",
+    "animated accordion",
+    "collapsible content",
+    "UI components library",
+    "Next.js accordion",
+    "TypeScript components",
+    "responsive accordion",
+    "FAQ component",
+    "expandable sections",
+    "toggle component",
+    "interactive accordion",
+    "modern UI components",
+    "content organization",
+    "collapsible UI",
+    "accordion animation",
+    "dropdown sections",
+    "web components",
+  ],
+  authors: [{ name: "Naymur Rahman", url: "https://twitter.com/naymur_dev" }],
+  creator: "@naymur_dev",
+  publisher: "UI Layouts",
+};
+
+# MongoDB CRUD in Next.js (App Router)
+
+A small, readable CRUD example you can copy into any project.
+
+## 1. DB Connection
+
+```ts
+// lib/db.ts
+import mongoose from "mongoose";
+
+export async function connectDB() {
+  if (mongoose.connection.readyState >= 1) return;
+  await mongoose.connect(process.env.MONGO_URL!);
+}
+```
+
+## 2. Model
+
+```ts
+// models/Todo.ts
+import { Schema, model, models } from "mongoose";
+const TodoSchema = new Schema({
+  title: String,
+  done: Boolean,
+});
+export default models.Todo || model("Todo", TodoSchema);
+```
+
+## 3. API Routes
+
+```ts
+// app/api/todos/route.ts
+import { NextResponse } from "next/server";
+import Todo from "@/models/Todo";
+import { connectDB } from "@/lib/db";
+export async function GET() {
+  await connectDB();
+  const todos = await Todo.find();
+  return NextResponse.json(todos);
+}
+export async function POST(req: Request) {
+  await connectDB();
+  const body = await req.json();
+  const todo = await Todo.create(body);
+  return NextResponse.json(todo);
+}
+```
+
+## 4. Client Page
+
+```tsx
+"use client";
+import { useEffect, useState } from "react";
+export default function Page() {
+  const [todos, setTodos] = useState([]);
+  useEffect(() => {
+    fetch("/api/todos")
+      .then((r) => r.json())
+      .then(setTodos);
+  }, []);
+  return (
+    <div className="p-4">
+      <h1 className="text-xl font-bold mb-2">Todos</h1>
+      {todos.map((t) => (
+        <div key={t._id} className="border p-2 mb-1 rounded">
+          {t.title}
+        </div>
+      ))}
+    </div>
+  );
+}
+```
+
+A simple CRUD to showcase your MDX template.
