@@ -25,13 +25,44 @@ function useContactUs(): [
 
   const Send = async (data: ClientData) => {
     const body = {
-      content: "Message Received",
-      tts: false,
-      color: "white",
+      username: "NextCodez Bot",
+      avatar_url: "https://ui-layouts.com/apple-touch-icon.png", // optional
       embeds: [
         {
-          title: "Message from my NextCodez",
-          description: `Name: ${data.name}\nEmail: ${data.email}\nMessage: ${data.message}\nProject Sample: ${data.project_sample}`,
+          title: "📩 New Contact Form Submission",
+          description: "A new user submitted a message from NextCodez.",
+          color: 0x3b82f6, // blue color for branding
+
+          fields: [
+            {
+              name: "👤 Name",
+              value: data.name || "N/A",
+              inline: true,
+            },
+            {
+              name: "📧 Email",
+              value: data.email || "N/A",
+              inline: true,
+            },
+            {
+              name: "📱 Phone",
+              value: data.phone || "N/A",
+              inline: true,
+            },
+            {
+              name: "💬 Message",
+              value: data.message || "No message provided.",
+            },
+            {
+              name: "📝 Project Sample",
+              value: data.project_sample || "N/A",
+            },
+          ],
+
+          footer: {
+            text: "NextCodez Contact Form",
+          },
+          timestamp: new Date().toISOString(),
         },
       ],
     };

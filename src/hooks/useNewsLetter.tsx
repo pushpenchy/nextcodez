@@ -19,13 +19,26 @@ function useNewsLetter(): [
 
   const Send = async (data: ClientData) => {
     const body = {
-      content: "Message Received",
-      tts: false,
-      color: "white",
+      username: "NextCodez Bot",
+      avatar_url: "https://ui-layouts.com/apple-touch-icon.png", // optional
       embeds: [
         {
-          title: "Message for Weekly News-letter from NextCodez",
-          description: `Email: ${data.email}`,
+          title: "📰 New Newsletter Signup",
+          description:
+            "A new user subscribed to the NextCodez weekly newsletter.",
+          color: 0x3b82f6, // blue brand color
+
+          fields: [
+            {
+              name: "📧 Email",
+              value: data.email || "N/A",
+            },
+          ],
+
+          footer: {
+            text: "NextCodez Newsletter",
+          },
+          timestamp: new Date().toISOString(),
         },
       ],
     };
