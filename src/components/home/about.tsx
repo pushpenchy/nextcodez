@@ -73,7 +73,7 @@ const About = () => {
   return (
     <>
       <section
-        className="about h-fit w-screen py-10 pt-0  bg-cover bg-[#E2DFDF] text-black relative"
+        className="about h-fit w-screen py-10 pt-0  bg-cover bg-[#ffffff] text-black relative"
         ref={container}
         id="about"
       >

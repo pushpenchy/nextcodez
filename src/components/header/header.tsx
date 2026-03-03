@@ -10,13 +10,13 @@ function Header() {
   const isMobile = useMediaQuery("(max-width: 992px)");
   return (
     <>
-      <div className="header md:px-10 px-2 border-b-2 border-neutral-900/10 backdrop-blur-xl fixed top-0 w-full z-99">
+      <div className="header md:px-10 px-2 border-b-2 border-neutral-900/10 backdrop-blur-xl absolute top-0 w-full z-99">
         <div
           className={cn(
             "container mx-auto md:py-4 py-2",
             pathname.startsWith("/blogs/")
               ? "2xl:max-w-6xl xl:max-w-210 lg:max-w-178 max-w-5xl xl:px-0 sm:px-10 px-5"
-              : ""
+              : "",
           )}
         >
           <nav className="flex justify-between items-center">

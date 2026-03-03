@@ -30,14 +30,14 @@ const HeroSec = () => {
       {
         y: 1000,
       },
-      { y: 0, delay: 0.1, stagger: 0.02, ease: "expo.out" }
+      { y: 0, delay: 0.1, stagger: 0.02, ease: "expo.out" },
     )
       .fromTo(
         ".title-text span",
         {
           y: 1000,
         },
-        { y: 0, delay: 0.1, stagger: 0.02, ease: "expo.out" }
+        { y: 0, delay: 0.1, stagger: 0.02, ease: "expo.out" },
       )
       .fromTo(
         ".slide-line .path",
@@ -46,7 +46,7 @@ const HeroSec = () => {
           opacity: 0,
         },
         { y: 0, opacity: 1, stagger: 0.1, ease: "expo.out" },
-        "a"
+        "a",
       )
       .fromTo(
         ".slide-anime ",
@@ -55,7 +55,7 @@ const HeroSec = () => {
           opacity: 0,
         },
         { y: 0, opacity: 1, stagger: 0.1, ease: "expo.out" },
-        "a"
+        "a",
       )
       .fromTo(
         ".spining-text ",
@@ -63,7 +63,7 @@ const HeroSec = () => {
           scale: 0,
           opacity: 0,
         },
-        { scale: 1, opacity: 1, stagger: 0.1, ease: "expo.out" }
+        { scale: 1, opacity: 1, stagger: 0.1, ease: "expo.out" },
       );
   };
 
@@ -171,6 +171,7 @@ const HeroSec = () => {
             </SpinningText>
           </div>
         )}
+
         <Image
           src="/bgbluryy.png"
           width={800}
