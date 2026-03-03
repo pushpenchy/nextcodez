@@ -3,14 +3,20 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Send } from "lucide-react";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
-import MotionDrawer from "../ui/motion-drawer";
 import { cn } from "@/lib/utils";
+import { motion } from "motion/react";
+import MotionDrawer from "../ui/motion-drawer";
 function Header() {
   const pathname = usePathname();
   const isMobile = useMediaQuery("(max-width: 992px)");
   return (
     <>
-      <div className="header md:px-10 px-2 border-b-2 border-neutral-900/10 backdrop-blur-xl absolute top-0 w-full z-99">
+      <motion.header
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="header md:px-10 px-2 border-b-2 border-neutral-900/10 backdrop-blur-xl absolute top-0 w-full z-99"
+      >
         <div
           className={cn(
             "container mx-auto md:py-4 py-2",
@@ -208,7 +214,7 @@ function Header() {
             )}
           </nav>
         </div>
-      </div>
+      </motion.header>
     </>
   );
 }

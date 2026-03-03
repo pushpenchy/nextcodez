@@ -11,17 +11,15 @@ import Footer from "@/components/footer";
 
 export default function Home() {
   return (
-    <>
-      <ReactLenis root>
-        <HeroSec />
-        <About />
-        <Service />
-        <Technology />
-        <Projectindex limitation={true} />
-        <Team />
-        <ContactUs />
-        <Footer />
-      </ReactLenis>
-    </>
+    <ReactLenis root>
+      <HeroSec />
+      <About />
+      <Service />
+      <Technology />
+      <Projectindex limitation={true} />
+      <Team />
+      <ContactUs />
+      <Footer />
+    </ReactLenis>
   );
 }
