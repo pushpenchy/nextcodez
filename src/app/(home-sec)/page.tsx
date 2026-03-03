@@ -16,11 +16,11 @@ export default function Home() {
         <HeroSec />
         <About />
         <Service />
-        {/* <Technology />
+        <Technology />
         <Projectindex limitation={true} />
         <Team />
         <ContactUs />
-        <Footer /> */}
+        <Footer />
       </ReactLenis>
     </>
   );
