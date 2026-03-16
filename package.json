@@ -1,7 +1,43 @@
 {
-  "name": "project1",
-  "version": "0.1.0",
+  "name": "ui-layouts-nextjs-template",
+  "version": "1.0.0",
+  "description": "UI-Layouts Pro Template - Modern Next.js 16 template with React 19, TailwindCSS 4, Motion animations, and AI SDK integration. Perfect for building stunning UI layouts and creative agency websites.",
   "private": true,
+  "keywords": [
+    "ui-layouts",
+    "ui-layouts-pro",
+    "nextjs",
+    "reactjs",
+    "tailwindcss",
+    "motion",
+    "ai-sdk",
+    "template",
+    "starter",
+    "ui-components",
+    "creative-agency",
+    "web-development",
+    "frontend",
+    "modern-ui",
+    "responsive-design",
+    "animations",
+    "gsap",
+    "framer-motion",
+    "typescript",
+    "component-library",
+    "design-system"
+  ],
+  "author": {
+    "name": "UI-Layouts",
+    "url": "https://ui-layouts.com"
+  },
+  "homepage": "https://ui-layouts.com/templates/nextjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ui-layouts/nextjs-template"
+  },
+  "bugs": {
+    "url": "https://github.com/ui-layouts/nextjs-template/issues"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",

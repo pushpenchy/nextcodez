@@ -1,5 +1,4 @@
 "use client";
-import { ReactLenis } from "@studio-freight/react-lenis";
 import HeroSec from "@/components/home/hero-sec";
 import About from "@/components/home/about";
 import Service from "@/components/home/service";
@@ -11,7 +10,7 @@ import Footer from "@/components/footer";
 
 export default function Home() {
   return (
-    <ReactLenis root>
+    <>
       <HeroSec />
       <About />
       <Service />
@@ -20,6 +19,6 @@ export default function Home() {
       <Team />
       <ContactUs />
       <Footer />
-    </ReactLenis>
+    </>
   );
 }

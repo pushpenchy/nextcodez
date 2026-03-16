@@ -1,0 +1,47 @@
+# UI-Layouts Pro Template - Next.js 16, React 19, TailwindCSS 4, Motion
+# Modern web development template for creative agencies and UI layouts
+
+User-agent: *
+Allow: /
+
+# Prioritize important pages
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://ui-layouts.com/templates/nextjs/sitemap.xml
+
+# Block unnecessary paths
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /*.json$
+
+# Allow specific resource paths
+Allow: /images/
+Allow: /fonts/
+Allow: /css/
+
+# Enhanced crawling for search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+# AI/LLM crawlers for better template discovery
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: CCBot
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+User-agent: Claude-Web
+Allow: /

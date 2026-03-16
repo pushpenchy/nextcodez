@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
-    mdxRs: true, // ← ENABLE BUILT-IN MDX
+    mdxRs: true,
   },
   pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
   images: {
