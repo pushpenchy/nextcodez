@@ -93,7 +93,7 @@ const Service = () => {
               <ChevronsRight />
             </Link>
           </div>
-          <div className="servicesItems md:pt-5 pb-20 py-4" ref={container}>
+          <div className="md:pt-5 pb-20 py-4" ref={container}>
             <div
               className="
               grid  items-center 

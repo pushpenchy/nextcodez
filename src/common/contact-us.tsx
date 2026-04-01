@@ -85,7 +85,7 @@ function ContactUs({ pad, hideMarquie }: any) {
             employees and customers.
           </p>
           <ScheduleMeeting />
-          <div className="project-inquiry my-10 sm:p-5 p-3 sm:py-10 py-5 border-2 border-gray-400 rounded-xl">
+          <div className="my-10 sm:p-5 p-3 sm:py-10 py-5 border-2 border-gray-400 rounded-xl">
             <h1 className="text-4xl font-bold pt-5 pb-10">Project Inquiry</h1>
             <form onSubmit={(e) => handleSubmitData(e)}>
               <div className="grid md:grid-cols-2 gap-8">

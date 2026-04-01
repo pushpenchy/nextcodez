@@ -22,10 +22,10 @@ const HeroSec = () => {
 
   return (
     <>
-      <section className="herosec relative h-screen overflow-hidden" id="home">
+      <section className="relative h-screen overflow-hidden" id="home">
         <div className="container mx-auto h-full">
           <motion.div
-            className="hero-title text-center h-full grid place-content-center place-items-center relative"
+            className="text-center h-full grid place-content-center place-items-center relative"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -126,52 +126,9 @@ const HeroSec = () => {
             </motion.div>
           </motion.div>
         </div>
-        {/* <motion.svg
-          width="1728"
-          height="477"
-          viewBox="0 0 1728 477"
-          fill="none"
-          className="slide-line absolute w-full lg:bottom-0 -bottom-20 -z-3"
-          xmlns="http://www.w3.org/2000/svg"
-          initial={{ y: 100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1], delay: 1.4 }}
-        >
-          <path
-            d="M389 509C994.522 121.517 1346 -19 2066.5 73"
-            stroke="#ffffff"
-            strokeOpacity="0.2"
-            strokeWidth="2"
-            className="path"
-          />
-          <path
-            d="M213.5 480.5C624.5 137 1297.5 -54 2058 149"
-            stroke="#ffffff"
-            strokeOpacity="0.2"
-            strokeWidth="2"
-            className="path"
-          />
-          <path
-            d="M1.5 448.5C432 -55.9999 1440.5 -24 2090.5 234.5"
-            stroke="#ffffff"
-            strokeOpacity="0.2"
-            strokeWidth="2"
-            className="path"
-          />
-          <circle
-            cx="1394.5"
-            cy="70.5"
-            r="69.5"
-            className="path"
-            stroke="#ffffff"
-            strokeOpacity="0.2"
-            strokeWidth="2"
-          />
-        </motion.svg> */}
-
         {!isMobile && (
           <motion.div
-            className="spining-text absolute sm:right-40 right-28 bottom-26 w-12 grid place-items-center"
+            className="absolute sm:right-40 right-28 bottom-26 w-12 grid place-items-center"
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1], delay: 1.5 }}
@@ -194,7 +151,7 @@ const HeroSec = () => {
         )}
 
         <motion.div
-          className="slide-image absolute object-contain w-full bottom-0 sm:right-0 -z-10"
+          className="absolute object-contain w-full bottom-0 sm:right-0 -z-10"
           initial={{ y: 1000 }}
           animate={{ y: 0 }}
           transition={{ duration: 1.2, ease: [0.19, 1, 0.22, 1], delay: 0.3 }}

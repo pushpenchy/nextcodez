@@ -30,7 +30,8 @@ export default function ProjectData({ projectData, reversed }: DoubleProps) {
             reversed
               ? " lg:col-span-7 sm:col-span-6 col-span-12"
               : "lg:col-span-5 sm:col-span-6 col-span-12"
-          } relative mb-8 sm:h-96`}>
+          } relative mb-8 sm:h-96`}
+        >
           <div className="w-full h-full">
             <Image
               src={projects[0].src}
@@ -60,8 +61,9 @@ export default function ProjectData({ projectData, reversed }: DoubleProps) {
             reversed
               ? " lg:col-span-5 sm:col-span-6 col-span-12"
               : "lg:col-span-7 sm:col-span-6 col-span-12"
-          } relative mb-6 sm:h-96`}>
-          <div className="w-full  h-f ull">
+          } relative mb-6 sm:h-96`}
+        >
+          <div className="w-full h-full">
             <Image
               src={projects[1].src}
               alt={"image"}

@@ -74,9 +74,9 @@ const HeroSecWithGsapIntro = () => {
         finishIntro={finishIntro}
         handleHeroTittleAnimation={handleHeroTittleAnimation}
       />
-      <section className="herosec relative h-screen overflow-hidden" id="home">
+      <section className="relative h-screen overflow-hidden" id="home">
         <div className="container mx-auto h-full">
-          <div className=" hero-title  text-center h-full  grid place-content-center place-items-center relative">
+          <div className="text-center h-full  grid place-content-center place-items-center relative">
             <div className="relative z-2">
               <div className="2xl:text-10xl lg:text-8xl md:text-7.5xl sm:text-7xl text-5xl">
                 <div className="flex px-4 lg:gap-10 gap-5 justify-center lg:-translate-x-20  md:-translate-x-6 overflow-hidden">
@@ -118,7 +118,7 @@ const HeroSecWithGsapIntro = () => {
           height="477"
           viewBox="0 0 1728 477"
           fill="none"
-          className="slide-line absolute w-full lg:bottom-0 -bottom-20 -z-3"
+          className="absolute w-full lg:bottom-0 -bottom-20 -z-3"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -154,7 +154,7 @@ const HeroSecWithGsapIntro = () => {
         </svg>
 
         {!isMobile && (
-          <div className="spining-text absolute sm:right-40 right-28 bottom-26 w-12 grid place-items-center">
+          <div className="absolute sm:right-40 right-28 bottom-26 w-12 grid place-items-center">
             <Image
               src="/newlighting.svg"
               width={400}
@@ -177,7 +177,7 @@ const HeroSecWithGsapIntro = () => {
           width={800}
           height={800}
           alt="liggting image"
-          className="slide-image absolute object-contain w-full bottom-0 sm:right-0 -z-10"
+          className="absolute object-contain w-full bottom-0 sm:right-0 -z-10"
         />
         <div className="relative -mt-96 h-96 w-screen overflow-hidden mask-[radial-gradient(80%_50%,white,transparent)] before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_bottom_center,#3273ff,transparent_90%)] before:opacity-20 ">
           <Sparkles

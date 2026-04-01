@@ -75,7 +75,7 @@ function BlogsSecindex() {
             {Blogs?.map((blog, index) => {
               return (
                 <>
-                  <div className="card" key={index}>
+                  <div key={index}>
                     <AspectRatio.Root ratio={16 / 9}>
                       <div className="w-full relative">
                         <Image
@@ -83,7 +83,7 @@ function BlogsSecindex() {
                           width={1200}
                           height={1200}
                           alt="image"
-                          className=" w-full rounded-xl"
+                          className="w-full rounded-xl"
                         />
                       </div>
                     </AspectRatio.Root>

@@ -83,7 +83,7 @@ export function TeamMember({ className }: { className?: string }) {
       <div
         className={cn(
           "grid lg:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-4",
-          className
+          className,
         )}
       >
         {teamMembers.map((member) => {
@@ -97,12 +97,9 @@ export function TeamMember({ className }: { className?: string }) {
                 }}
                 transition={{ ease: "easeOut" }}
                 viewport={{ once: true }}
-                className="member"
               >
                 <div
-                  className={`${
-                    member.height ? "member-img memeber-height" : "member-img"
-                  } w-full 2xl:h-80 xl:h-72 sm:h-64 h-52 relative overflow-hidden`}
+                  className={`w-full 2xl:h-80 xl:h-72 sm:h-64 h-52 relative overflow-hidden`}
                 >
                   <Image
                     src={member.img}
@@ -112,7 +109,7 @@ export function TeamMember({ className }: { className?: string }) {
                     className="h-full w-full object-cover"
                   />
                 </div>
-                <div className="info py-2">
+                <div className="py-2">
                   <p className="md:text-2xl font-semibold">{member.name}</p>
                   <p className="sm:text-base text-sm">{member.title}</p>
                 </div>

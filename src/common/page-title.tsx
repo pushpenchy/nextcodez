@@ -28,9 +28,7 @@ function PageTitle({
           width="2478"
           height="438"
           viewBox="0 0 2478 438"
-          className={`intro-logo w-full p-16  sm:-z-3 z-20`}
-          // whileHover={{ scale: 1.02 }}
-          // whileTap={{ scale: 0.9 }}
+          className="w-full p-16  sm:-z-3 z-20"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >

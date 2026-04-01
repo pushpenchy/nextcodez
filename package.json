@@ -40,7 +40,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/obfuscate-tailwind.js && next build",
     "start": "next start",
     "lint": "eslint ."
   },
@@ -89,5 +89,7 @@
     "@types/react": "19.2.6",
     "@types/react-dom": "19.2.3"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "glob": "^13.0.6"
+  }
 }

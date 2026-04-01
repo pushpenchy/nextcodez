@@ -110,14 +110,14 @@ function PageLoader({
       variants={introSlide}
       initial="default"
       animate={finishIntro ? ["enterOne", "enterTwo", "enterThree"] : ""}
-      className="intro h-screen w-full fixed top-0 left-0 z-99 bg-[#07111d] grid place-content-center "
+      className="h-screen w-full fixed top-0 left-0 z-99 bg-base grid place-content-center "
       ref={app}
     >
       <motion.svg
         width="2478"
         height="438"
         viewBox="0 0 2478 438"
-        className={`intro-logo w-full p-16`}
+        className={`w-full p-16`}
         // whileHover={{ scale: 1.02 }}
         // whileTap={{ scale: 0.9 }}
         fill="none"
@@ -196,7 +196,7 @@ function PageLoader({
           fill="#3E7AEE"
         />
       </motion.svg>
-      <div className="intro-title  absolute top-0 left-0 w-full h-full grid place-content-center">
+      <div className="absolute top-0 left-0 w-full h-full grid place-content-center">
         <div className="flex md:flex-row flex-col md:gap-6 items-center">
           {introTitle.map((introTitle, index) => {
             return (
@@ -210,7 +210,7 @@ function PageLoader({
         </div>
         <div className="flex justify-center">
           <button
-            className=" cursor-pointer items-center bg-white px-8 py-3 flex gap-8 hover:gap-5 transition-[gap] rounded-full text-2xl w-fit text-black "
+            className="cursor-pointer items-center bg-white px-8 py-3 flex gap-8 hover:gap-5 transition-[gap] rounded-full text-2xl w-fit text-black"
             onClick={() => handleHeroTittleAnimation()}
           >
             EXPLORE

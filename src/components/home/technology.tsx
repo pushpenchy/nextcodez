@@ -51,7 +51,7 @@ const Technology = () => {
             opacity: 0,
             ease: "expo.out",
           },
-          "=-.8"
+          "=-.8",
         )
         .from(
           ".stack .imgbox",
@@ -61,7 +61,7 @@ const Technology = () => {
             ease: "expo.out",
             stagger: 0.05,
           },
-          "=-.8"
+          "=-.8",
         );
     }, container);
     return () => ctx.revert();
@@ -78,7 +78,7 @@ const Technology = () => {
           width={800}
           height={800}
           alt="liggting image"
-          className="techbg absolute object-contain w-full top-0 -z-3"
+          className="absolute object-contain w-full top-0 -z-3"
         />
         <div className="absolute top-0 h-96 -z-8 w-screen overflow-hidden mask-[radial-gradient(80%_50%,white,transparent)] before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_bottom_center,#3273ff,transparent_90%)] before:opacity-0 ">
           <Sparkles
@@ -97,7 +97,7 @@ const Technology = () => {
               width="269"
               height="328"
               viewBox="0 0 269 328"
-              className="techline absolute top-20 -z-3 sm:w-full w-52"
+              className="absolute top-20 -z-3 sm:w-full w-52"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -151,7 +151,7 @@ const Technology = () => {
               height="227"
               viewBox="0 0 227 227"
               fill="none"
-              className="techlogo md:w-52 w-40 md:translate-y-0 md:translate-x-0 -translate-y-10 -translate-x-2"
+              className="md:w-52 w-40 md:translate-y-0 md:translate-x-0 -translate-y-10 -translate-x-2"
               xmlns="http://www.w3.org/2000/svg"
             >
               <circle cx="113.5" cy="113.5" r="113.5" fill="#fff" />
@@ -161,13 +161,13 @@ const Technology = () => {
               />
             </svg>
           </div>
-          <div className="stack md:mt-16 mt-0 lg:p-10 p-5 lg:w-[90%] w-[80%] mx-auto bg-white rounded-xl">
+          <div className="md:mt-16 mt-0 lg:p-10 p-5 lg:w-[90%] w-[80%] mx-auto bg-white rounded-xl">
             <div className="grid lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-4 grid-cols-3 2xl:gap-6 md:gap-2 gap-2 flex-wrap">
               {technology.map((img, index) => {
                 return (
                   <div
                     key={index}
-                    className="imgbox sm:w-full xl:h-32 md:h-28 sm:h-24 sm:p-4  p-3 bg-[#07111D] rounded-xl grid place-content-center"
+                    className="sm:w-full xl:h-32 md:h-28 sm:h-24 sm:p-4  p-3 bg-[#07111D] rounded-xl grid place-content-center"
                   >
                     <Image
                       src={img.img}

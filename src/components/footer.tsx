@@ -70,7 +70,7 @@ const Footer = ({ className }: { className?: string }) => {
       <div
         className={cn(
           "relative h-full pt-14 bg-[#f7f7f7] text-black",
-          className
+          className,
         )}
         ref={container}
       >
@@ -97,7 +97,7 @@ const Footer = ({ className }: { className?: string }) => {
                     />{" "}
                     <button
                       type="submit"
-                      className="cursor-pointer w-full hover:bg-primary-color bg-white text-white h-full cols-span-1"
+                      className="cursor-pointer w-full hover:bg-primary-color bg-white text-white h-full col-span-1"
                     >
                       <svg
                         width="15"

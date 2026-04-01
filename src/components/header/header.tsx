@@ -15,7 +15,7 @@ function Header() {
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="header md:px-10 px-2 border-b-2 border-neutral-900/10 backdrop-blur-xl absolute top-0 w-full z-99"
+        className="md:px-10 px-2 border-b-2 border-neutral-900/10 backdrop-blur-xl absolute top-0 w-full z-99"
       >
         <div
           className={cn(
@@ -26,7 +26,7 @@ function Header() {
           )}
         >
           <nav className="flex justify-between items-center">
-            <Link href="/" className="logo xl:w-52 sm:w-40 w-28">
+            <Link href="/" className="xl:w-52 sm:w-40 w-28">
               <svg
                 width="152"
                 height="27"
