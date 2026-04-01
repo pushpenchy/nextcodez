@@ -85,7 +85,7 @@ const SKIP_CLASSES = [
 function generateRandomClassName() {
   const letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
   const chars = letters + "0123456789";
-  let result = "nextcodez-uilayouts-";
+  let result = "nextcodez-";
   result += letters.charAt(Math.floor(Math.random() * letters.length));
   for (let i = 1; i < CONFIG.randomNameLength; i++) {
     result += chars.charAt(Math.floor(Math.random() * chars.length));
