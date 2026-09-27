@@ -4,15 +4,13 @@ import SectionTittle from "@/common/section-tittle";
 import React, { FormEvent, useState } from "react";
 import { Marquee } from "@/components/ui/marquee";
 
-import useContactUs, { ClientData } from "@/hooks/useContactUs";
-import { toast } from "sonner";
 import { cn } from "@/lib/utils";
+import { CONTACT_EMAIL, WHATSAPP_DISPLAY, whatsappLink } from "@/lib/contact";
 interface GetStartedDataType {
   id: number;
   title: string;
 }
 function ContactUs({ pad, hideMarquie }: any) {
-  const [Send, cilentData] = useContactUs();
 
   const getstarted: GetStartedDataType[] = [
     { id: 1, title: "Get Started" },
@@ -20,34 +18,22 @@ function ContactUs({ pad, hideMarquie }: any) {
     { id: 3, title: "Get Started" },
     { id: 4, title: "Contact Us" },
   ];
-  const handleSubmitData = async (e: FormEvent) => {
+  const handleSubmitData = (e: FormEvent) => {
     e.preventDefault();
-    const target = e.target as HTMLFormElement;
-    const formData = new FormData(target);
+    const formData = new FormData(e.target as HTMLFormElement);
+    const field = (name: string) => (formData.get(name) || "").toString().trim();
 
-    const clientName = formData.get("client_name")!;
-    const clientEmail = formData.get("client_email")!;
-    const clientPhone = formData.get("client_phone")!;
-    const companyURL = formData.get("company_url")!;
-    const description = formData.get("description")!;
+    const lines = [
+      "Hi NextCodez, I'd like to talk about a project.",
+      "",
+      `Name: ${field("client_name")}`,
+      `Email: ${field("client_email")}`,
+    ];
+    if (field("client_phone")) lines.push(`Phone: ${field("client_phone")}`);
+    if (field("company_url")) lines.push(`Company: ${field("company_url")}`);
+    lines.push("", field("description"));
 
-    const data: ClientData = {
-      name: clientName.toString(),
-      email: clientEmail.toString(),
-      phone: clientPhone.toString(),
-      message: description.toString(),
-      project_sample: companyURL.toString(),
-    };
-
-    const sent = await Send(data);
-    if (sent) {
-      toast.success("We received your message. Thanks!");
-      target.reset();
-    } else {
-      toast.error(
-        "Sorry, your message couldn't be sent. Please email dev.pushpen@gmail.com instead."
-      );
-    }
+    window.open(whatsappLink(lines.join("\n")), "_blank", "noopener");
   };
 
   return (
@@ -86,7 +72,16 @@ function ContactUs({ pad, hideMarquie }: any) {
             Tell us what you&apos;re building. We&apos;ll get back to you with
             honest advice on what it needs and what it will take.
           </p>
-          <ScheduleMeeting />
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+            <ScheduleMeeting />
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="text-xl font-semibold underline"
+            >
+              {CONTACT_EMAIL}
+            </a>
+          </div>
+          <p className="pt-3 text-gray-400">WhatsApp: {WHATSAPP_DISPLAY}</p>
           <div className="my-10 sm:p-5 p-3 sm:py-10 py-5 border-2 border-gray-400 rounded-xl">
             <h1 className="text-4xl font-bold pt-5 pb-10">Project Inquiry</h1>
             <form onSubmit={(e) => handleSubmitData(e)}>
@@ -123,15 +118,19 @@ function ContactUs({ pad, hideMarquie }: any) {
                 cols={68}
                 rows={7}
                 name="description"
-                placeholder="Tell us About your project *"
+                placeholder="Tell us about your project *"
+                required
                 className="w-full p-4 my-8 mb-2 sm:text-xl bg-transparent border-2 rounded-xl border-gray-400"
               ></textarea>
               <button
                 type="submit"
                 className="w-fit cursor-pointer slide-anime px-5 py-3 rounded-xl text-xl bg-[#3E7AEE] text-white flex gap-4 items-center"
               >
-                Submit Details
+                Send on WhatsApp
               </button>
+              <p className="pt-3 text-sm text-gray-400">
+                Opens WhatsApp with your details filled in.
+              </p>
             </form>
           </div>
         </div>
