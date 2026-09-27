@@ -17,14 +17,7 @@ function Header() {
         transition={{ duration: 0.5 }}
         className="md:px-10 px-2 border-b-2 border-neutral-900/10 backdrop-blur-xl absolute top-0 w-full z-99"
       >
-        <div
-          className={cn(
-            "container mx-auto md:py-4 py-2",
-            pathname.startsWith("/blogs/")
-              ? "2xl:max-w-6xl xl:max-w-210 lg:max-w-178 max-w-5xl xl:px-0 sm:px-10 px-5"
-              : "",
-          )}
-        >
+        <div className="container mx-auto md:py-4 py-2">
           <nav className="flex justify-between items-center">
             <Link href="/" className="xl:w-52 sm:w-40 w-28">
               <svg
@@ -116,17 +109,6 @@ function Header() {
                   Projects
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/blogs"
-                  className={`${
-                    pathname.startsWith("/blogs") &&
-                    "bg-white p-1 px-3 rounded-full text-black"
-                  }`}
-                >
-                  Blogs
-                </Link>
-              </li>
             </ul>
             <div className="lg:flex hidden gap-4 items-center">
               <Link
@@ -187,18 +169,6 @@ function Header() {
                       }`}
                     >
                       Projects
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/blogs"
-                      className={`${
-                        pathname === "/blogs"
-                          ? "bg-white p-2 rounded-full text-black"
-                          : ""
-                      }`}
-                    >
-                      Blogs
                     </Link>
                   </li>
                 </ul>

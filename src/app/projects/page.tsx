@@ -1,11 +1,10 @@
-import Header from "@/components/header/header";
 import ProjectPageIndex from "@/components/projects";
 import type { Metadata } from "next";
 import React from "react";
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nextcodez.ui-layouts.com/projects"),
-  title: "Projects | Our Most Recent Projects",
-  description: "Your Creative Friendly Agency",
+  title: "Projects",
+  description:
+    "Websites and web apps built by NextCodez, including Alpha BD Packaging, Pixel ADX and ToolsBucket.",
 };
 function page() {
   return (

@@ -1,16 +1,9 @@
 "use client";
-import React, { useLayoutEffect, useRef, useState } from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import SectionTittle from "@/common/section-tittle";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { AnimatedNumber } from "../ui/animated-number";
-import { useInView } from "motion/react";
 import { Marquee } from "@/components/ui/marquee";
-interface AchieveMentArray {
-  id: number;
-  count: number;
-  title: string;
-}
 interface ServiceDataType {
   id: number;
   title: string;
@@ -18,27 +11,15 @@ interface ServiceDataType {
 const About = () => {
   const container = useRef<HTMLDivElement>(null);
 
-  const [value, setValue] = useState(0);
-  const isInView = useInView(container);
-
-  if (isInView && value === 0) {
-    setValue(10000);
-  }
-
   const services: ServiceDataType[] = [
     { id: 1, title: "Web Design" },
-    { id: 2, title: "Logo Design" },
-    { id: 3, title: "Web Development" },
-    { id: 4, title: "UI/UX Design" },
-  ];
-  const achivements: AchieveMentArray[] = [
-    { id: 1, count: 200, title: "Projects Done" },
-    { id: 2, count: 10, title: "Talented Member" },
-    { id: 3, count: 100, title: "Happy Clients" },
+    { id: 2, title: "Web Development" },
+    { id: 3, title: "Landing Pages" },
+    { id: 4, title: "Brand Identity" },
   ];
 
   const phrase =
-    "We aim to be the NEXT driving force behind your digital success, seamlessly merging the realms of web development, digital marketing, SEO, video editing, voiceovers, and more into a dynamic and unified journey.";
+    "We want to be the NEXT driving force behind your digital success, with design, development and digital marketing under one roof.";
   const splitWords = phrase.split(" ").map((word, index) => (
     <p className="word md:px-2 px-1" key={index}>
       {word.split("").map((char, index) => (
@@ -103,33 +84,8 @@ const About = () => {
         </div>
         <div className="container mx-auto pt-14">
           <SectionTittle title="Our Vision" des="" />
-          <div className="2xl:text-7xl xl:text-6xl lg:text-6xl sm:text-5xl text-3xl font-medium md:pt-4 pt-2 flex flex-wrap  ">
+          <div className="2xl:text-7xl xl:text-6xl lg:text-6xl sm:text-5xl text-3xl font-medium md:pt-4 pt-2 md:pb-20 pb-10 flex flex-wrap  ">
             {splitWords}
-          </div>
-
-          <div className="w-full md:p-10 p-5 rounded-xl bg-black text-white md:my-20 my-10 ">
-            <div className="relative z-2 flex flex-col md:flex-row md:justify-between items-center">
-              {achivements.map(({ count, title, id }) => {
-                return (
-                  <div className="text-center md:py-0 py-4" key={id}>
-                    <h1 className="xl:text-8xl text-7xl md:font-medium font-semibold ">
-                      <AnimatedNumber
-                        className="inline-flex items-center font-mono font-light text-white"
-                        springOptions={{
-                          bounce: 0,
-                          duration: 10000,
-                        }}
-                        value={count}
-                      />
-                      +
-                    </h1>
-                    <span className="md:text-2xl text-xl  font-semibold tracking-widest">
-                      {title}
-                    </span>
-                  </div>
-                );
-              })}
-            </div>
           </div>
         </div>
 

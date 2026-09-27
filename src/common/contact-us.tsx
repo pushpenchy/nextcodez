@@ -20,9 +20,7 @@ function ContactUs({ pad, hideMarquie }: any) {
     { id: 3, title: "Get Started" },
     { id: 4, title: "Contact Us" },
   ];
-  const handleSubmitData = (e: FormEvent) => {
-    e.preventDefault();
-    console.log(e);
+  const handleSubmitData = async (e: FormEvent) => {
     e.preventDefault();
     const target = e.target as HTMLFormElement;
     const formData = new FormData(target);
@@ -41,9 +39,15 @@ function ContactUs({ pad, hideMarquie }: any) {
       project_sample: companyURL.toString(),
     };
 
-    Send(data);
-    toast.success("We Received Your Message, Thanks");
-    target.reset();
+    const sent = await Send(data);
+    if (sent) {
+      toast.success("We received your message. Thanks!");
+      target.reset();
+    } else {
+      toast.error(
+        "Sorry, your message couldn't be sent. Please email dev.pushpen@gmail.com instead."
+      );
+    }
   };
 
   return (
@@ -79,10 +83,8 @@ function ContactUs({ pad, hideMarquie }: any) {
         <div className="container mx-auto py-14 pb-5">
           <SectionTittle title="Let's Work Together" des="" />
           <p className="pb-5 lg:w-[55%]">
-            Don&apos;t settle for clunky and confusing enterprise software.
-            Contact us today to see how our user-centered approach can benefit
-            your business and improve the overall user experience for your
-            employees and customers.
+            Tell us what you&apos;re building. We&apos;ll get back to you with
+            honest advice on what it needs and what it will take.
           </p>
           <ScheduleMeeting />
           <div className="my-10 sm:p-5 p-3 sm:py-10 py-5 border-2 border-gray-400 rounded-xl">
@@ -113,7 +115,7 @@ function ContactUs({ pad, hideMarquie }: any) {
                   type="text"
                   name="company_url"
                   className="w-full p-3  sm:text-xl rounded-xl bg-transparent border-2 border-gray-400"
-                  placeholder="Compnay URL(optional)"
+                  placeholder="Company URL (optional)"
                 />
               </div>
               <textarea

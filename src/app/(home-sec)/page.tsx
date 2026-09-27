@@ -4,7 +4,6 @@ import About from "@/components/home/about";
 import Service from "@/components/home/service";
 import Technology from "@/components/home/technology";
 import Projectindex from "@/common/project";
-import Team from "@/components/home/team";
 import ContactUs from "@/common/contact-us";
 import Footer from "@/components/footer";
 
@@ -16,7 +15,6 @@ export default function Home() {
       <Service />
       <Technology />
       <Projectindex limitation={true} />
-      <Team />
       <ContactUs />
       <Footer />
     </>

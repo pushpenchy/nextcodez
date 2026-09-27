@@ -108,90 +108,65 @@ const rubintek = localFont({
   variable: "--font-rubintek",
 });
 
+const siteTitle = "NextCodez | Web Design & Development Studio in Chattogram";
+const siteDescription =
+  "NextCodez designs and builds fast, modern websites, web apps and landing pages for businesses. Based in Chattogram, Bangladesh.";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ui-layouts.com/templates/nextjs"),
+  metadataBase: new URL("https://nextcodez.com"),
   title: {
-    default:
-      "UI-Layouts Pro Template | Next.js 16, React 19, TailwindCSS 4, Motion",
-    template: "%s | UI-Layouts Pro Template",
+    default: siteTitle,
+    template: "%s | NextCodez",
   },
-  description:
-    "UI-Layouts Pro Template - Modern Next.js 16 template with React 19, TailwindCSS 4, Motion animations, and AI SDK integration. Perfect for building stunning UI layouts, creative agency websites, and modern web applications with smooth animations and responsive design.",
+  description: siteDescription,
   keywords: [
-    "ui-layouts",
-    "ui-layouts-pro",
-    "nextjs template",
-    "reactjs template",
-    "tailwindcss template",
-    "motion animations",
-    "ai-sdk integration",
-    "ui components",
-    "creative agency",
-    "web development",
-    "frontend template",
-    "modern ui",
-    "responsive design",
-    "animations",
-    "gsap",
-    "framer motion",
-    "typescript template",
-    "component library",
-    "design system",
+    "NextCodez",
+    "web design Chattogram",
+    "web development Bangladesh",
+    "Next.js developer",
+    "landing pages",
+    "web studio",
   ],
-  authors: [{ name: "UI-Layouts", url: "https://ui-layouts.com" }],
-  creator: "UI-Layouts",
-  publisher: "UI-Layouts",
-  category: "Technology",
-  classification: "Web Development Template",
+  authors: [
+    {
+      name: "Pushpen Chowdhury",
+      url: "https://www.linkedin.com/in/pushpen-chowdhury-1546652b4/",
+    },
+  ],
+  creator: "NextCodez",
+  publisher: "NextCodez",
   openGraph: {
-    title:
-      "UI-Layouts Pro Template | Next.js 16, React 19, TailwindCSS 4, Motion",
-    description:
-      "Modern Next.js 16 template with React 19, TailwindCSS 4, Motion animations, and AI SDK. Perfect for building stunning UI layouts and creative agency websites.",
+    title: siteTitle,
+    description: siteDescription,
     type: "website",
     locale: "en",
-    siteName: "UI-Layouts Pro",
-    url: "https://ui-layouts.com/templates/nextjs",
+    siteName: "NextCodez",
+    url: "https://nextcodez.com",
     images: [
       {
-        url: "https://ui-layouts.com/templates/nextjs/og.jpg",
+        url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "UI-Layouts Pro Template - Next.js 16 with React 19, TailwindCSS 4, Motion",
+        alt: "NextCodez: web design and development studio",
       },
     ],
   },
   twitter: {
-    title:
-      "UI-Layouts Pro Template | Next.js 16, React 19, TailwindCSS 4, Motion",
-    description:
-      "Modern Next.js 16 template with React 19, TailwindCSS 4, Motion animations, and AI SDK. Perfect for building stunning UI layouts.",
+    title: siteTitle,
+    description: siteDescription,
     card: "summary_large_image",
-    site: "@uilayouts",
-    creator: "@uilayouts",
     images: [
       {
-        url: "https://ui-layouts.com/templates/nextjs/og.jpg",
+        url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "UI-Layouts Pro Template - Next.js 16 with React 19, TailwindCSS 4, Motion",
+        alt: "NextCodez: web design and development studio",
       },
     ],
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  verification: {
-    google: "your-google-verification-code",
-    yandex: "your-yandex-verification-code",
   },
 };
 

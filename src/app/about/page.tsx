@@ -1,11 +1,10 @@
 import AboutIndex from "@/components/about";
-import Header from "@/components/header/header";
 import type { Metadata } from "next";
 import React from "react";
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nextcodez.ui-layouts.com/about"),
-  title: "About Us | Know More About Our Creative Agency",
-  description: "Your Creative Friendly Agency",
+  title: "About Us",
+  description:
+    "NextCodez is a web design and development studio in Chattogram, Bangladesh.",
 };
 
 function PageAbout() {

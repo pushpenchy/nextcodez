@@ -35,7 +35,7 @@ export default function ProjectData({ projectData, reversed }: DoubleProps) {
           <div className="w-full h-full">
             <Image
               src={projects[0].src}
-              alt={"image"}
+              alt={`${projects[0].name} website`}
               height={600}
               width={1200}
               className="h-full w-full object-cover rounded-xl"
@@ -66,7 +66,7 @@ export default function ProjectData({ projectData, reversed }: DoubleProps) {
           <div className="w-full h-full">
             <Image
               src={projects[1].src}
-              alt={"image"}
+              alt={`${projects[1].name} website`}
               height={600}
               width={1200}
               className="h-full w-full object-cover rounded-xl"

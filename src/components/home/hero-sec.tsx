@@ -77,9 +77,9 @@ const HeroSec = () => {
                   delay: 1.0,
                 }}
               >
-                We specialize increaming visual identites for{" "}
-                <br className="sm:block hidden" /> your compnay&apos;s, products
-                and brands{" "}
+                We design and build fast, modern websites for{" "}
+                <br className="sm:block hidden" /> businesses, products and
+                brands
               </motion.p>
 
               <motion.div
@@ -145,7 +145,7 @@ const HeroSec = () => {
               fontSize={1.2}
               className="font-medium leading-none top-0 w-full h-full text-black"
             >
-              {`brand-building  • developement • marketing • `}
+              {`design  • development • marketing • `}
             </SpinningText>
           </motion.div>
         )}

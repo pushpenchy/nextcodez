@@ -7,6 +7,7 @@ import useNewsLetter, { ClientData } from "@/hooks/useNewsLetter";
 import Link from "next/link";
 import { useInView, motion } from "motion/react";
 import { cn } from "@/lib/utils";
+import { toast } from "sonner";
 
 const pathArr = [
   "M55.7447 0H15.3191L0 45.5836H18.2979L4.25532 81.7065H16.5957L5.95745 126L34.4681 82.9966L45.9574 126H120V0H104.681L104.255 110.519H58.2979L45.9574 64.5051H28.0851L42.9787 39.1331L61.7021 106.648H99.5745V0H80V94.6075H76.1702L55.7447 0Z",
@@ -23,7 +24,6 @@ const pathArr = [
 const Footer = ({ className }: { className?: string }) => {
   const container = useRef<HTMLDivElement>(null);
   const [Send, cilentData] = useNewsLetter();
-  const [openPopup, setOpenPopUp] = useState(false);
 
   const ref = useRef(null);
   const isInView = useInView(ref);
@@ -42,9 +42,7 @@ const Footer = ({ className }: { className?: string }) => {
 
     hidden: { translateY: 200 },
   };
-  const handleNewsLetterData = (e: FormEvent) => {
-    e.preventDefault();
-    console.log(e);
+  const handleNewsLetterData = async (e: FormEvent) => {
     e.preventDefault();
     const target = e.target as HTMLFormElement;
     const formData = new FormData(target);
@@ -55,13 +53,11 @@ const Footer = ({ className }: { className?: string }) => {
       email: clientEmail.toString(),
     };
 
-    Send(data);
-    setOpenPopUp(true);
-    target.reset();
-    if (setOpenPopUp) {
-      setTimeout(() => {
-        setOpenPopUp(false);
-      }, 2000);
+    if (await Send(data)) {
+      toast.success("You're subscribed. Thanks!");
+      target.reset();
+    } else {
+      toast.error("Sorry, that didn't work. Please try again later.");
     }
   };
 
@@ -138,9 +134,6 @@ const Footer = ({ className }: { className?: string }) => {
                   <Link href="/projects">Projects</Link>
                 </li>
                 <li className="text-xl font-medium">
-                  <Link href="/blogs">Blogs</Link>
-                </li>
-                <li className="text-xl font-medium">
                   <Link href="/contact-us">Contact</Link>
                 </li>
               </ul>
@@ -150,8 +143,9 @@ const Footer = ({ className }: { className?: string }) => {
                 </li>
                 <li className="text-xl font-medium">
                   <a
-                    href="https://www.linkedin.com/company/ui-layouts"
+                    href="https://www.linkedin.com/in/pushpen-chowdhury-1546652b4/"
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="underline"
                   >
                     LinkedIn
@@ -159,21 +153,20 @@ const Footer = ({ className }: { className?: string }) => {
                 </li>
                 <li className="text-xl font-medium">
                   <a
-                    href="https://x.com/uilayout"
+                    href="https://github.com/pushpenchy"
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="underline"
                   >
-                    X
+                    GitHub
                   </a>
                 </li>
                 <li className="text-xl font-medium">
-                  <a href="" target="_blank" className="underline">
-                    Instagram
-                  </a>
-                </li>
-                <li className="text-xl font-medium">
-                  <a href="" target="_blank" className="underline">
-                    Facebook
+                  <a
+                    href="mailto:dev.pushpen@gmail.com"
+                    className="underline"
+                  >
+                    Email
                   </a>
                 </li>
               </ul>
@@ -207,11 +200,9 @@ const Footer = ({ className }: { className?: string }) => {
           </div>
           <div className="flex md:flex-row flex-col-reverse gap-3 justify-between py-2">
             <span className="font-medium">
-              &copy; 2023 NextCodez. All Rights Reserved.
+              &copy; {new Date().getFullYear()} NextCodez. All Rights Reserved.
             </span>
-            <a href="#" className="font-semibold">
-              Privacy Policy
-            </a>
+            <span className="font-medium">Chattogram, Bangladesh</span>
           </div>
         </div>
       </div>

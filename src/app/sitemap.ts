@@ -1,5 +1,9 @@
 export default async function sitemap() {
-  const baseUrl = "https://nextcodez.com/";
+  const baseUrl = "https://nextcodez.com";
+  const pages = ["", "/about", "/services", "/projects", "/contact-us"];
 
-  return [{ url: baseUrl, lastModified: new Date() }];
+  return pages.map((page) => ({
+    url: `${baseUrl}${page}`,
+    lastModified: new Date(),
+  }));
 }

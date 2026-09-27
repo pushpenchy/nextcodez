@@ -10,7 +10,7 @@ interface DiscordIntegrationResponse {
 }
 
 function useNewsLetter(): [
-  (data: ClientData) => Promise<void>,
+  (data: ClientData) => Promise<boolean>,
   DiscordIntegrationResponse | undefined
 ] {
   const [clientData, setClientData] = useState<
@@ -18,9 +18,10 @@ function useNewsLetter(): [
   >(undefined);
 
   const Send = async (data: ClientData) => {
+    const hookUrl = process.env.NEXT_PUBLIC_DISCROD_NEWSLETTER_HOOK;
+    if (!hookUrl) return false;
     const body = {
       username: "NextCodez Bot",
-      avatar_url: "https://ui-layouts.com/apple-touch-icon.png", // optional
       embeds: [
         {
           title: "📰 New Newsletter Signup",
@@ -45,15 +46,12 @@ function useNewsLetter(): [
 
     try {
       const response: AxiosResponse<DiscordIntegrationResponse> =
-        await axios.post(
-          process.env.NEXT_PUBLIC_DISCROD_NEWSLETTER_HOOK || "",
-          body
-        );
+        await axios.post(hookUrl, body);
       setClientData(response);
-
-      // You can check the status code here if needed, e.g., if (response.status === 204) { ... }
+      return true;
     } catch (error) {
       console.error(error);
+      return false;
     }
   };
 

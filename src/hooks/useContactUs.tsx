@@ -16,7 +16,7 @@ interface DiscordIntegrationResponse {
 }
 
 function useContactUs(): [
-  (data: ClientData) => Promise<void>,
+  (data: ClientData) => Promise<boolean>,
   DiscordIntegrationResponse | undefined
 ] {
   const [clientData, setClientData] = useState<
@@ -24,9 +24,10 @@ function useContactUs(): [
   >(undefined);
 
   const Send = async (data: ClientData) => {
+    const hookUrl = process.env.NEXT_PUBLIC_DISCROD_CONTACT_US_HOOK;
+    if (!hookUrl) return false;
     const body = {
       username: "NextCodez Bot",
-      avatar_url: "https://ui-layouts.com/apple-touch-icon.png", // optional
       embeds: [
         {
           title: "📩 New Contact Form Submission",
@@ -69,15 +70,12 @@ function useContactUs(): [
 
     try {
       const response: AxiosResponse<DiscordIntegrationResponse> =
-        await axios.post(
-          process.env.NEXT_PUBLIC_DISCROD_CONTACT_US_HOOK || "",
-          body
-        );
+        await axios.post(hookUrl, body);
       setClientData(response);
-
-      // You can check the status code here if needed, e.g., if (response.status === 204) { ... }
+      return true;
     } catch (error) {
       console.error(error);
+      return false;
     }
   };
 

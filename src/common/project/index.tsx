@@ -3,9 +3,7 @@ import SectionTittle from "@/common/section-tittle";
 import React from "react";
 import { projects } from "@/lib/projects-data";
 import ProjectData from "./project-data";
-import Image from "next/image";
-import { motion } from "motion/react";
-import { ChevronsRight, MoveUpRight } from "lucide-react";
+import { ChevronsRight } from "lucide-react";
 import Link from "next/link";
 
 const Projectindex = ({ limitation }: { limitation?: boolean }) => {
@@ -19,7 +17,7 @@ const Projectindex = ({ limitation }: { limitation?: boolean }) => {
           {limitation ? (
             <SectionTittle
               title="Our Projects"
-              des="Take a look at Our most succesful projects"
+              des="A few things we've built"
             />
           ) : (
             <></>
@@ -30,42 +28,6 @@ const Projectindex = ({ limitation }: { limitation?: boolean }) => {
             projectData={[projects[2], projects[3]]}
             reversed={true}
           />
-          {limitation ? (
-            <></>
-          ) : (
-            <>
-              <ProjectData projectData={[projects[4], projects[5]]} />
-              <motion.div
-                initial={{ y: 50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ ease: "easeOut", delay: 0.2 }}
-                viewport={{ once: false }}
-                className={`
-        relative mb-6 `}
-              >
-                <div className="w-full  h-full">
-                  <Image
-                    src="/projects/profitableslogo.jpg"
-                    alt={"image"}
-                    height={600}
-                    width={1200}
-                    className="h-full w-full object-cover rounded-xl"
-                  />
-                </div>
-                <div className="absolute bottom-0 text-black w-full p-4 flex justify-between items-center">
-                  <h3 className="text-xl bg-black text-white rounded-xl p-2 px-4">
-                    Profitables Logo
-                  </h3>
-                  <a
-                    href="#"
-                    className="w-12 h-12 text-white grid place-content-center rounded-full bg-black"
-                  >
-                    <MoveUpRight />
-                  </a>
-                </div>
-              </motion.div>
-            </>
-          )}
           {limitation && (
             <div className="flex justify-center">
               <Link

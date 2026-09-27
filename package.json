@@ -1,42 +1,16 @@
 {
-  "name": "ui-layouts-nextjs-template",
+  "name": "nextcodez",
   "version": "1.0.0",
-  "description": "UI-Layouts Pro Template - Modern Next.js 16 template with React 19, TailwindCSS 4, Motion animations, and AI SDK integration. Perfect for building stunning UI layouts and creative agency websites.",
+  "description": "Website for NextCodez, a web design and development studio in Chattogram, Bangladesh. Built on the UI-Layouts Pro NextCodez template.",
   "private": true,
-  "keywords": [
-    "ui-layouts",
-    "ui-layouts-pro",
-    "nextjs",
-    "reactjs",
-    "tailwindcss",
-    "motion",
-    "ai-sdk",
-    "template",
-    "starter",
-    "ui-components",
-    "creative-agency",
-    "web-development",
-    "frontend",
-    "modern-ui",
-    "responsive-design",
-    "animations",
-    "gsap",
-    "framer-motion",
-    "typescript",
-    "component-library",
-    "design-system"
-  ],
   "author": {
-    "name": "UI-Layouts",
-    "url": "https://ui-layouts.com"
+    "name": "Pushpen Chowdhury",
+    "url": "https://www.linkedin.com/in/pushpen-chowdhury-1546652b4/"
   },
-  "homepage": "https://ui-layouts.com/templates/nextjs",
+  "homepage": "https://nextcodez.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ui-layouts/nextjs-template"
-  },
-  "bugs": {
-    "url": "https://github.com/ui-layouts/nextjs-template/issues"
+    "url": "https://github.com/pushpenchy/nextcodez"
   },
   "scripts": {
     "dev": "next dev",

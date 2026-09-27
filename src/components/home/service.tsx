@@ -32,27 +32,27 @@ const Service = () => {
   const servicesData: ServiceTypes[] = [
     {
       id: "01",
-      title: "Designing",
+      title: "Design",
       OverlayTitle: "WE CREATE YOUR VISION",
-      des: "We make your logo communicate with your customers more than words ever could",
+      des: "Websites and brand identities that explain what you do in a few seconds",
     },
     {
       id: "02",
-      title: "Developement",
+      title: "Development",
       OverlayTitle: "CRAFTING YOUR IMAGINATION",
-      des: "We are dedicated to unlocking your business potential through precision development",
+      des: "Fast, reliable websites and web apps built with Next.js, React and TypeScript",
     },
     {
       id: "03",
-      title: "Video Editing",
-      OverlayTitle: "CRAFTING YOUR IMAGINATION",
-      des: "We are dedicated to unlocking your business potential through precision development",
+      title: "Landing Pages",
+      OverlayTitle: "BUILT TO CONVERT",
+      des: "Focused pages for ads and campaigns, with tracking set up properly from day one",
     },
     {
       id: "04",
       title: "SEO & Marketing",
       OverlayTitle: "CONNECT. ENGAGE. SUCCEED.",
-      des: "We specialize in crafting marketing solutions that propel your brand to new heights",
+      des: "Technical SEO and digital marketing that bring the right people to your site",
     },
   ];
 
@@ -80,9 +80,8 @@ const Service = () => {
         <div className="container mx-auto">
           <SectionTittle title="Our Services" des="Making Your Ideas Happen" />
           <p className="pb-6 lg:text-3xl sm:text-2xl text-xl lg:w-[70%]">
-            Our clients include companies, brands, startups, and content
-            creators. We consistently strive to provide the best possible
-            service to meet their needs
+            We work with businesses, startups and founders who want a website
+            that looks sharp, loads fast and actually brings in work.
           </p>
           <div className="hidden justify-end lg:flex">
             <Link
